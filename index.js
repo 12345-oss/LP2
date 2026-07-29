@@ -1,3 +1,4 @@
+require('dotenv').config()
 /*configurações do servidor */
 // carregar o modulo express
 const express = require('express')
@@ -16,8 +17,7 @@ app.listen(3050,()=>{
 //importar o modulo mongoose
 const mongoose = require('mongoose')
 /* configuração do banco de dados - fim */
-const conexao = ()=>{mongoose.connect('mongodb+srv:mongodb+srv://henrique:080306Hmk@cluster0.o9ghv.mongodb.net/?retryWrites=true&w=majority')
-}
+const conexao = ()=>{ mongoose.connect(process.env.MONGODB_URI) }
 
 /*configuração do banco de dados - fim*/
 
